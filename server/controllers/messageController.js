@@ -1,5 +1,5 @@
 import Message from "../models/message.js";
-import MessageThread from "../models/messageThread.js";
+import MessageThread from "../models/MessageThread.js";
 import User from "../models/User.js";
 import { uploadToCloudinary } from "../middleware/uploadMiddleware.js";
 import { getIO } from "../socket.js";

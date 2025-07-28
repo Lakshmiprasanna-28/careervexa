@@ -5,12 +5,12 @@ const messageThreadSchema = new mongoose.Schema(
     participants: [
       { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true }
     ],
-    lastMessage: { 
+    latestMessage: { 
       type: mongoose.Schema.Types.ObjectId, 
       ref: "Message" 
     }
   },
-  { timestamps: true } // 🔥 updatedAt will be used to sort threads in sidebar
+  { timestamps: true }
 );
 
 export default mongoose.model("MessageThread", messageThreadSchema);
