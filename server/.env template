@@ -1,0 +1,35 @@
+# === Server Configuration ===
+PORT=5000
+
+# === MongoDB Connection Strings ===
+MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/careervexa?retryWrites=true&w=majority&appName=Cluster0
+LOCAL_MONGO_URI=mongodb://127.0.0.1:27017/careervexa
+
+# === JWT Secret ===
+JWT_SECRET=your_jwt_secret_here
+
+# === OAuth Providers ===
+GOOGLE_CLIENT_ID=your_google_client_id.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_client_secret
+
+# === Email Service Configuration ===
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_SENDER=careervexa.jobs@gmail.com
+EMAIL_PASSWORD=your_email_app_password
+
+# === Cloudinary Configuration ===
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+# Optional: Full Cloudinary URL
+# CLOUDINARY_URL=cloudinary://<api_key>:<api_secret>@<cloud_name>
+
+# === Frontend Configuration ===
+VITE_API_URL=http://localhost:5000
+
+# === Admin Access Control ===
+ADMIN_WHITELIST=thotalakshmiprasanna825@gmail.com,pavanmuddars@gmail.com,brilligo28@gmail.com

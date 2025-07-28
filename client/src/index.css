@@ -1,0 +1,52 @@
+/* client/src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* index.css */
+
+/* Ensure app fills full screen */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background-color: #f9fafb; /* light mode default */
+  font-family: 'Inter', sans-serif;
+}
+
+/* Tailwind base + transitions */
+body {
+  @apply transition-colors duration-300 ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Scrollbar styling (optional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 116, 139, 0.4);
+  border-radius: 4px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Dark mode overrides handled by .dark on <html> */
+.dark {
+  background-color: #0f172a; /* dark bg fallback */
+  color-scheme: dark;
+}

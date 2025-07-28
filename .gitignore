@@ -1,0 +1,36 @@
+
+---
+
+## 🚫 3. `.gitignore` File (Place in Root)
+
+This prevents your `.env` files and other unwanted files from getting pushed to GitHub:
+
+```bash
+# Root node_modules
+node_modules/
+
+# Client & Server node_modules
+client/node_modules/
+server/node_modules/
+
+# Build files
+client/dist/
+client/build/
+server/build/
+
+# Environment Variables
+.env
+client/.env
+server/.env
+
+# Logs
+*.log
+
+# IDE files
+.vscode/
+.DS_Store
+*.swp
+
+# OS/Cache
+Thumbs.db
+.cache/

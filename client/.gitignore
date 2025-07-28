@@ -1,0 +1,23 @@
+# 🚫 Never commit sensitive stuff
+.env
+
+# 🚫 Local build output
+dist
+.vite
+*.log
+
+# ⚙️ System/Editor junk
+.DS_Store
+Thumbs.db
+node_modules/
+
+# IDE files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Testing
+coverage/

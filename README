@@ -1,0 +1,98 @@
+# Careervexa - MERN Stack Job Board Application 💼
+
+**Careervexa** is a full-stack job board web application that connects job seekers and employers. Users can create profiles, search and apply for jobs, post job listings, and communicate via real-time chat — all built using the MERN stack (MongoDB, Express, React, Node.js) with Socket.IO integration for live messaging.
+
+> Built with 💙 as part of a 6-week MERN Full Stack Web Development course project.
+
+---
+
+## 🚀 Tech Stack
+
+### Frontend
+- React + Vite
+- TailwindCSS
+- Axios
+- React Router
+- React Toastify
+
+### Backend
+- Node.js + Express.js
+- MongoDB + Mongoose
+- JWT Authentication
+- Socket.IO
+
+### Real-Time Chat
+- One-on-one messaging
+- Typing indicators
+- Delivered & Read ticks (like WhatsApp)
+- Unread message count
+- Media upload preview
+
+---
+
+## ✨ Key Features
+
+- 👤 User Signup/Login with role-based access (admin/user)
+- 🧾 Post and view job listings
+- 💬 Real-time chat between users
+- 🔍 Search users by name/email to start conversations
+- 📄 View and edit user profiles
+- 🛡️ Protected routes using JWT
+- 📱 Fully responsive design
+
+---
+
+## 📁 Folder Structure
+
+careervexa/
+├── client/ # Frontend - React
+├── server/ # Backend - Node.js & Express
+├── .gitignore
+└── README.md
+
+## ⚙️ Getting Started (Run Locally)
+
+### 1. Clone the Repository
+
+git clone https://github.com/your-username/careervexa.git
+cd careervexa
+
+## Set Up Frontend
+cd client
+npm install
+
+Create a .env file inside the client/ folder:
+VITE_API_BASE_URL=http://localhost:5000/api
+
+
+## Run the frontend:
+npm run dev
+
+
+## Set Up Backend
+cd ../server
+npm install
+
+
+Create a .env file inside the server/ folder:
+
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+
+## Run the backend:
+npm run dev
+
+## Access the App
+Frontend: http://localhost:5173
+Backend API: http://localhost:5000/api
+
+
+## Project Info
+Developer: Thota Lakshmi Prasanna
+Course: MERN Full Stack Web Development
+Duration: 6 Weeks
+Project Type: Internship 
+
+## License
+This project is licensed under the MIT License.
