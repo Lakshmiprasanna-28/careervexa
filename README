@@ -87,6 +87,10 @@ npm run dev
 Frontend: http://localhost:5173
 Backend API: http://localhost:5000/api
 
+🌐 Deployment 
+Frontend: Deploy to Vercel
+Backend: Deploy to Render or Railway
+Update environment variables accordingly on deployed platforms.
 
 ## Project Info
 Developer: Thota Lakshmi Prasanna
