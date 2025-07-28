@@ -1,4 +1,4 @@
-// 📁 client/src/context/ChatProvider.jsx
+// === client/src/context/ChatProvider.jsx ===
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { ChatContext } from "./ChatContext";
 import { connectSocket, getSocket } from "../pages/socket";
@@ -19,23 +19,15 @@ const ChatProvider = ({ children }) => {
   const didInitRef = useRef(false);
 
   useEffect(() => {
-    try {
-      const storedUser = localStorage.getItem("user");
-      if (storedUser) setUser(JSON.parse(storedUser));
-    } catch (err) {
-      console.error("❌ Failed to load user:", err);
-    }
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) setUser(JSON.parse(storedUser));
 
-    try {
-      const savedThreadId = localStorage.getItem("selectedThreadId");
-      const onMessagesRoot = location.pathname === "/messages";
-      if (savedThreadId && !onMessagesRoot) {
-        setSelectedThreadId(savedThreadId);
-      } else {
-        setSelectedThreadId(null);
-      }
-    } catch (err) {
-      console.error("❌ Failed to load selectedThreadId:", err);
+    const savedThreadId = localStorage.getItem("selectedThreadId");
+    const onMessagesRoot = location.pathname === "/messages";
+    if (savedThreadId && !onMessagesRoot) {
+      setSelectedThreadId(savedThreadId);
+    } else {
+      setSelectedThreadId(null);
     }
   }, [location.pathname]);
 
@@ -56,13 +48,13 @@ const ChatProvider = ({ children }) => {
           const existing = prevThreads.find((x) => x._id === t._id);
           return {
             ...t,
-            latestMessage: t.latestMessage ?? existing?.latestMessage ?? t.messages?.slice(-1)[0] ?? null,
+            lastMessage: t.lastMessage ?? existing?.lastMessage ?? t.messages?.slice(-1)[0] ?? null,
           };
         });
 
         return mergedThreads.sort((a, b) => {
-          const aTime = new Date(a.latestMessage?.createdAt || 0).getTime();
-          const bTime = new Date(b.latestMessage?.createdAt || 0).getTime();
+          const aTime = new Date(a.lastMessage?.createdAt || 0).getTime();
+          const bTime = new Date(b.lastMessage?.createdAt || 0).getTime();
           return bTime - aTime;
         });
       });
@@ -86,13 +78,13 @@ const ChatProvider = ({ children }) => {
         const existingThread = prevThreads.find((t) => t._id === threadId);
         if (!existingThread) return prevThreads;
 
-        const updatedThread = { ...existingThread, latestMessage: message };
+        const updatedThread = { ...existingThread, lastMessage: message };
         const remainingThreads = prevThreads.filter((t) => t._id !== threadId);
         return [updatedThread, ...remainingThreads];
       });
 
       if (selectedThreadId === threadId) {
-        setSelectedThread((prev) => ({ ...prev, latestMessage: message }));
+        setSelectedThread((prev) => ({ ...prev, lastMessage: message }));
       }
     },
     [selectedThreadId]
@@ -118,7 +110,6 @@ const ChatProvider = ({ children }) => {
       updateThreadPreview(message.threadId, message);
     });
 
-    // ✅ Listen for message delivery/read status updates
     activeSocket.on("messageStatusUpdated", ({ messageId, isDelivered, isRead }) => {
       setMessages((prevMessages) =>
         prevMessages.map((msg) =>
@@ -161,11 +152,11 @@ const ChatProvider = ({ children }) => {
     setMessages([]);
     setThreads((prevThreads) =>
       prevThreads.map((t) =>
-        t._id === selectedThreadId ? { ...t, latestMessage: null } : t
+        t._id === selectedThreadId ? { ...t, lastMessage: null } : t
       )
     );
     if (selectedThread) {
-      setSelectedThread((prev) => ({ ...prev, latestMessage: null }));
+      setSelectedThread((prev) => ({ ...prev, lastMessage: null }));
     }
   };
 

@@ -43,8 +43,8 @@ export const getThreads = async (userId, token) => {
     );
 
     return filteredThreads.sort((a, b) => {
-      const aTime = new Date(a.latestMessage?.createdAt || 0).getTime();
-      const bTime = new Date(b.latestMessage?.createdAt || 0).getTime();
+      const aTime = new Date(a.lastMessage?.createdAt || 0).getTime();
+      const bTime = new Date(b.lastMessage?.createdAt || 0).getTime();
       return bTime - aTime;
     });
   } catch (error) {
