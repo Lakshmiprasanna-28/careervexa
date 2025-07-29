@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { ChatContext } from "./ChatContext";
 import { connectSocket, getSocket } from "../pages/socket";
-import { getThreads, markAsRead } from "../api/MessageApi.js";
+import { getThreads, markAsRead } from "../api/MessageApi.js"; 
 import { useLocation } from "react-router-dom";
 
 const ChatProvider = ({ children }) => {
