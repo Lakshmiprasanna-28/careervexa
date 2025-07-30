@@ -7,7 +7,7 @@ import {
   blockUser,
   clearChatMessages,
   deleteChat
-} from "../api/MessageApi.js";
+} from "../../api/MessageApi.js";
 
 function ChatHeaderComponent() {
   const {
