@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { getThreads } from "../api/MessageApi";
+import { getThreads } from "@/api/MessageApi";
 import { useChat } from "../context/useChat";
 
 export function useThreads() {
