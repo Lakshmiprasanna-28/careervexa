@@ -3,11 +3,7 @@ import React, { useMemo, useState } from "react";
 import { useChat } from "../../context/useChat.jsx";
 import { EllipsisVertical } from "lucide-react";
 import toast from "react-hot-toast";
-import {
-  blockUser,
-  clearChatMessages,
-  deleteChat
-} from "../../api/MessageApi.js";
+import { blockUser, clearChatMessages, deleteChat } from "@/api/MessageApi";
 
 function ChatHeaderComponent() {
   const {
