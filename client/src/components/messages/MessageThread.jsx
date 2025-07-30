@@ -1,6 +1,6 @@
 // 📁 client/src/components/messages/MessageThread.jsx
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import { getMessages, markAsRead } from "../api/MessageApi";
+import { getMessages, markAsRead } from "../../api/MessageApi";
 import { useChat } from "../../context/useChat.jsx";
 import MessageBubble from "./MessageBubble";
 import ScrollToBottom from "./ScrollToBottom";
