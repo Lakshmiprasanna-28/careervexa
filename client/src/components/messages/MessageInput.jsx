@@ -1,6 +1,6 @@
 // 📁 client/src/components/messages/MessageInput.jsx
 import React, { useState, useRef, useEffect } from "react";
-import { sendMessage } from "../../../api/MessageApi";
+import { sendMessage } from "../../api/MessageApi";
 import { useChat } from "../../context/useChat.jsx";
 import EmojiPicker from "./EmojiPicker";
 import MediaPreview from "./MediaPreview";
