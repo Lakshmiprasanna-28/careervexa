@@ -107,6 +107,7 @@ app.use("/api/messages", messageRoutes);        // ✅ new messaging API endpoin
 app.use("/api/admin", adminRoutes);
 app.use("/api/notifications", notificationRoutes);
 app.use("/api/upload", uploadRoutes);
+app.get("/health", (req, res) => res.json({ status: "ok" }));
 
 // === Resume Handling ===
 app.use("/uploads", express.static(uploadPath));
