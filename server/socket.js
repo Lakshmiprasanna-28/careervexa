@@ -1,7 +1,7 @@
 // === server/socket.js ===
 import jwt from "jsonwebtoken";
 import Message from "./models/Message.js";
-import MessageThread from "./models/messageThread.js";
+import MessageThread from "./models/MessageThread.js";
 
 let ioInstance = null;
 export const getIO = () => ioInstance;
