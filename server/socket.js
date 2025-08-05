@@ -1,6 +1,6 @@
 // === server/socket.js ===
 import jwt from "jsonwebtoken";
-import Message from "./models/Message.js";
+import Message from "./models/message.js";
 import MessageThread from "./models/MessageThread.js";
 
 let ioInstance = null;
